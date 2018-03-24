@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import View, TemplateView, ListView, DetailView
+from django.views.generic import View, TemplateView, ListView, DetailView, CreateView
 from .models import StartUps
 
 # Create your views here.
@@ -20,3 +20,9 @@ def login(request):
 class StartUpListView(ListView):
     queryset= StartUps.objects.all()
     template_name = 'dashboard/startups.html'
+
+class StartUpCreate(CreateView):
+    model = StartUps
+    fields = ['start_up_name', 'start_up_description']
+    template_name = 'dashboard/add.html'
+

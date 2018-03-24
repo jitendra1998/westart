@@ -34,8 +34,8 @@
                     </a>
                 </div>
                 <ul class="nav">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="dashboard">
+                    <li>
+                        <a class="nav-link" href="../dashboard">
                             <i class="nc-icon nc-chart-pie-35"></i>
                             <p>Dashboard</p>
                         </a>
@@ -46,7 +46,7 @@
                             <p>User Profile</p>
                         </a>
                     </li>
-                    <li>
+                    <li class="nav-item active">
                         <a class="nav-link" href="../viewstartup">
                             <i class="nc-icon nc-notes"></i>
                             <p>View Startups</p>
@@ -133,7 +133,43 @@
             <!-- End Navbar -->
             <div class="content">
                 <div class="container-fluid">
-                    <div class="row"> 
+                    <div class="row">  
+                        <!-- Horizontal material form -->
+                            <form method="post">
+                                <!-- Grid row -->
+                                <div class="form-group row" style="width: 150%;">
+                                    <!-- Material input -->
+                                    <label for="inputtext3MD" class="col-sm-4 col-form-label">Start Up Name</label>
+                                    <div class="col-sm-8">
+                                        <div class="md-form mt-0">
+                                            <input type="text" class="form-control" id="inputtext3MD" placeholder="Name">
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Grid row -->
+
+                                <!-- Grid row -->
+                                <!-- Grid row -->
+                                <div class="form-group row" style="width: 150%;">
+                                    <!-- Material input -->
+                                    <label for="inputtextarea3MD" class="col-sm-4 col-form-label">Start Up Description</label>
+                                    <div class="col-sm-8">
+                                        <div class="md-form mt-0">
+                                             <textarea class="form-control" id="inputtextarea3MD" rows="5"></textarea> 
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Grid row -->
+
+                                <!-- Grid row -->
+                                <div class="form-group row">
+                                    <div class="col-sm-10">
+                                        <button type="submit" class="btn btn-primary btn-md">Submit</button>
+                                    </div>
+                                </div>
+                                <!-- Grid row -->
+                            </form>
+                            <!-- Horizontal material form -->
                     </div>
                 </div>     
             </div>
@@ -177,7 +213,7 @@
         </a>
 
         <ul class="dropdown-menu">
-			<li class="header-title"> Sidebar Style</li>
+            <li class="header-title"> Sidebar Style</li>
             <li class="adjustments-line">
                 <a href="javascript:void(0)" class="switch-trigger">
                     <p>Background Image</p>
@@ -241,7 +277,7 @@
             <li class="header-title" id="sharrreTitle">Thank you for sharing!</li>
 
             <li class="button-container">
-				<button id="twitter" class="btn btn-social btn-outline btn-twitter btn-round sharrre"><i class="fa fa-twitter"></i> · 256</button>
+                <button id="twitter" class="btn btn-social btn-outline btn-twitter btn-round sharrre"><i class="fa fa-twitter"></i> · 256</button>
                 <button id="facebook" class="btn btn-social btn-outline btn-facebook btn-round sharrre"><i class="fa fa-facebook-square"></i> · 426</button>
             </li>
         </ul>
