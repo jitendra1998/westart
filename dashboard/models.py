@@ -4,9 +4,6 @@ from django.contrib.auth.models import User
 class StartUps(models.Model):
    start_up_name = models.CharField(max_length=256)
    start_up_description = models.TextField(blank=True, null=True)
-   start_up_members = models.TextField(blank=True, null=True)
-   start_up_skills_req = models.TextField(blank=True, null=True)
-   start_up_sal = models.IntegerField()
 
 
    def __str__(self):
@@ -21,12 +18,4 @@ class Profile(models.Model):
    address = models.TextField(blank=True, null=True)
 
 
-class Ventures(models.Model):
-   ventures_name = models.TextField(blank=True, null=True)
-   ventures_description = models.TextField(blank=True, null=True)
 
-
-class Ventures_Request(models.Model):
-   ventures_request_start_up_name = models.TextField(blank=True, null=True)
-   ventures_request_USP = models.TextField(blank=True, null=True)
-   ventures_request_Amount = models.IntegerField()

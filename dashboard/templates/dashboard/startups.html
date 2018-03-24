@@ -34,8 +34,8 @@
                     </a>
                 </div>
                 <ul class="nav">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="dashboard">
+                    <li>
+                        <a class="nav-link" href="../dashboard">
                             <i class="nc-icon nc-chart-pie-35"></i>
                             <p>Dashboard</p>
                         </a>
@@ -46,7 +46,7 @@
                             <p>User Profile</p>
                         </a>
                     </li>
-                    <li>
+                    <li class="nav-item active">
                         <a class="nav-link" href="../viewstartup">
                             <i class="nc-icon nc-notes"></i>
                             <p>View Startups</p>
@@ -134,6 +134,19 @@
             <div class="content">
                 <div class="container-fluid">
                     <div class="row"> 
+                            {% if startups_list %}
+    <ul>
+
+      {% for startups in startups_list %}
+      <li>
+        <a>{{ startups.start_up_name }}</a> {{startups.start_up_description}}
+      </li>
+      {% endfor %}
+
+    </ul>
+    {% else %}
+      <p>There are no books in the library.</p>
+    {% endif %} 
                     </div>
                 </div>     
             </div>
