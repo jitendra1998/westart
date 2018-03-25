@@ -28,19 +28,19 @@
 
   <!-- Navbar -->
 <!--   <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
-    <div class="container"> 
- 
+    <div class="container">
+
       <a class="navbar-brand" href="https://mdbootstrap.com/material-design-for-bootstrap/" target="_blank">
         <strong>MDB</strong>
       </a>
- 
+
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
         aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
- 
+
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
- 
+
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
             <a class="nav-link" href="#">Home
@@ -57,7 +57,7 @@
             <a class="nav-link" href="https://mdbootstrap.com/bootstrap-tutorial/" target="_blank">Free tutorials</a>
           </li>
         </ul>
- 
+
         </ul>
 
       </div>
@@ -104,7 +104,7 @@
 
           <!--Grid column-->
           <div class="col-md-3 col-xl-4 mb-4">
-            
+
           </div>
           <div class="col-md-6 col-xl-5 mb-4">
 
@@ -115,7 +115,8 @@
               <div class="card-body">
 
                 <!-- Form -->
-                <form name="">
+                <form name="" method="post">
+                  {% csrf_token %}
                   <!-- Heading -->
                   <h3 class="dark-grey-text text-center">
                     <strong>Login:</strong>
@@ -124,14 +125,14 @@
 
                   <div class="md-form">
                     <i class="fa fa-envelope prefix grey-text"></i>
-                    <input type="text" id="form3" class="form-control">
+                    <input type="text" name="username" id="form3" class="form-control">
                     <label for="form3">Your email</label>
                   </div>
                   <div class="md-form">
                     <i class="fa fa-lock prefix grey-text"></i>
-                    <input type="password" id="form2" class="form-control">
+                    <input type="password" name="password" id="form2" class="form-control">
                     <label for="form2">Your password</label>
-                  </div> 
+                  </div>
                    <p class="font-small blue-text d-flex justify-content-end">Forgot <a href="#" class="blue-text ml-1"> Password?</a></p>
                   <div class="text-center">
                     <button class="btn btn-info btn-rounded btn-lg">Login</button>
@@ -145,9 +146,12 @@
                     <!--Google +-->
                     <button type="button" class="btn btn-white btn-rounded z-depth-1a"><i class="fa fa-google-plus blue-text"></i></button>
                 </div>
-                    <fieldset class="form-check"> 
+                    <fieldset class="form-check">
                      <p class="font-small grey-text d-flex justify-content-end">Not a member? <a href="#" class="blue-text ml-1"> Sign Up</a></p>
                     </fieldset>
+                    {% if error != '' %}
+                        <label class='red-text' for="">{{ error }}</label>
+                    {% endif %}
                   </div>
 
                 </form>

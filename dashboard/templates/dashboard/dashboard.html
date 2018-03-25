@@ -35,7 +35,7 @@
                 </div>
                 <ul class="nav">
                     <li class="nav-item active">
-                        <a class="nav-link" href="dashboard">
+                        <a class="nav-link" href="dashboard.html">
                             <i class="nc-icon nc-chart-pie-35"></i>
                             <p>Dashboard</p>
                         </a>
@@ -47,13 +47,13 @@
                         </a>
                     </li>
                     <li>
-                        <a class="nav-link" href="../viewstartup">
+                        <a class="nav-link" href="./table.html">
                             <i class="nc-icon nc-notes"></i>
                             <p>View Startups</p>
                         </a>
                     </li>
                     <li>
-                        <a class="nav-link" href="../createstartup">
+                        <a class="nav-link" href="./typography.html">
                             <i class="nc-icon nc-paper-2"></i>
                             <p>Create Startup</p>
                         </a>
@@ -63,13 +63,13 @@
                             <i class="nc-icon nc-notes"></i>
                             <p class="col-md-8" style="padding: 0px;">View Venture Capitalists</p>
                         </a>
-                    </li> 
+                    </li>
                     <li>
                         <a class="nav-link" href="./notifications.html">
                             <i class="nc-icon nc-bell-55"></i>
                             <p>Notifications</p>
                         </a>
-                    </li> 
+                    </li>
                 </ul>
             </div>
         </div>
@@ -84,7 +84,7 @@
                         <span class="navbar-toggler-bar burger-lines"></span>
                     </button>
                     <div class="collapse navbar-collapse justify-content-end" id="navigation">
-                        <ul class="nav navbar-nav mr-auto"> 
+                        <ul class="nav navbar-nav mr-auto">
                             <li class="dropdown nav-item">
                                 <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
                                     <i class="nc-icon nc-planet"></i>
@@ -92,7 +92,7 @@
                                     <span class="d-lg-none">Notification</span>
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <a class="dropdown-item" href="#">Notification 1</a> 
+                                    <a class="dropdown-item" href="#">Notification 1</a>
                                 </ul>
                             </li>
                             <li class="nav-item">
@@ -122,7 +122,7 @@
                                 </div>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#pablo">
+                                <a class="nav-link" href="{% url 'logout' %}">
                                     <span class="no-icon">Log out</span>
                                 </a>
                             </li>
@@ -133,9 +133,72 @@
             <!-- End Navbar -->
             <div class="content">
                 <div class="container-fluid">
-                    <div class="row"> 
+                    <div class="row">
+    <ul style="width: 100%">
+
+      <li>
+        <!--Accordion wrapper-->
+        <div class="accordion" id="accordionEx" role="tablist" aria-multiselectable="true">
+          <h5>
+            Your Group
+          </h5>
+            <!-- Accordion card -->
+             <div class="card">
+
+                    <!-- Card header -->
+                    <div class="card-header" role="tab" id="headingTwo" >
+                        <a  class="collapsed" data-toggle="collapse" href="#startname" aria-expanded="false" aria-controls="startname">
+                            <h5 class=" col-md-8" style="margin: 0px; ">
+                                 Women bachat gad <i class="fa fa-angle-down rotate-icon"></i>
+                            </h5>
+                        </a>
+                        <button type="button" style="margin-bottom:15px;" class="btn btn-info btn-rounded float-right position-absolute">Chat</button>
                     </div>
-                </div>     
+
+                    <!-- Card body -->
+                    <div id="startname" class="collapse" role="tabpanel" aria-labelledby="headingTwo" data-parent="#accordionEx" >
+                        <div class="card-body">
+                            <p style="margin5px;">Members:- </p>
+                            <p style="margin5px;">1) kanti</p>
+                            <p style="margin5px;">2)smita</p>
+                        </div>
+                    </div>
+                </div>
+            <!-- Accordion card -->
+            <!-- Accordion card -->
+             <div class="card">
+
+                    <!-- Card header -->
+                    <div class="card-header" role="tab" id="headingTwo" >
+                        <a  class="collapsed" data-toggle="collapse" href="#startname2" aria-expanded="false" aria-controls="startname">
+                            <h5 class=" col-md-8" style="margin: 0px; ">
+                                Archar sanghathan <i class="fa fa-angle-down rotate-icon"></i>
+                            </h5>
+                        </a>
+                        <button type="button" style="margin-bottom:15px;" class="btn btn-info btn-rounded float-right position-absolute">Chat</button>
+                    </div>
+
+                    <!-- Card body -->
+                    <div id="startname2" class="collapse" role="tabpanel" aria-labelledby="headingTwo" data-parent="#accordionEx" >
+                        <div class="card-body">
+                          <p style="margin5px;">Members:-</p>
+                          <p style="margin5px;">1) Siri</p>
+                          <p style="margin5px;">2)Heena</p>
+                          <p style="margin5px;">3) Rekha</p>
+                        </div>
+                    </div>
+                </div>
+            <!-- Accordion card -->
+
+
+            <!-- Accordion card -->
+        </div>
+    </li>
+        <!--/.Accordion wrapper-->
+
+    </ul>
+                    </div>
+                </div>
             </div>
             <footer class="footer">
                 <div class="container">
@@ -155,7 +218,7 @@
                                 <a href="#">
                                     Contact us
                                 </a>
-                            </li> 
+                            </li>
                         </ul>
                         <p class="copyright text-center">
                             ©

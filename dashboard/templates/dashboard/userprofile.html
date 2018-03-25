@@ -34,20 +34,20 @@
                     </a>
                 </div>
                 <ul class="nav">
-                    <li>
-                        <a class="nav-link" href="../dashboard">
-                            <i class="nc-icon nc-chart-pie-35"></i>
-                            <p>Dashboard</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="nav-link" href="./user.html">
+                  <li>
+                      <a class="nav-link active" href="./user.html">
+                          <i class="nc-icon nc-chart-pie-35"></i>
+                          <p>Dashboard</p>
+                      </a>
+                  </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="dashboard.html">
                             <i class="nc-icon nc-circle-09"></i>
                             <p>User Profile</p>
                         </a>
                     </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="../viewstartup">
+                    <li>
+                        <a class="nav-link" href="./table.html">
                             <i class="nc-icon nc-notes"></i>
                             <p>View Startups</p>
                         </a>
@@ -57,7 +57,7 @@
                             <i class="nc-icon nc-paper-2"></i>
                             <p>Create Startup</p>
                         </a>
-                    </li> 
+                    </li>
                     <li>
                         <a class="nav-link" href="./notifications.html">
                             <i class="nc-icon nc-bell-55"></i>
@@ -116,7 +116,7 @@
                                 </div>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#pablo">
+                                <a class="nav-link" href="{% url 'logout' %}">
                                     <span class="no-icon">Log out</span>
                                 </a>
                             </li>
@@ -128,49 +128,50 @@
             <div class="content">
                 <div class="container-fluid">
                     <div class="row">
-                            {% if startups_list %}
-    <ul style="width: 100%">
-
-      {% for startups in startups_list %}
-      <li>
-        <!--Accordion wrapper-->
-        <div class="accordion" id="accordionEx" role="tablist" aria-multiselectable="true">
-
-            <!-- Accordion card -->
-             <div class="card">
-
-                    <!-- Card header -->
-                    <div class="card-header" role="tab" id="headingTwo" >
-                        <a  class="collapsed" data-toggle="collapse" href="#{{ startups.start_up_name }}" aria-expanded="false" aria-controls="{{ startups.start_up_name }}">
-                            <h5 class=" col-md-8" style="margin: 0px; ">
-                                 {{ startups.start_up_name }} <i class="fa fa-angle-down rotate-icon"></i>
-                            </h5>
-                        </a>
-                        <button type="button" style="margin-bottom:10px;" class="btn btn-info btn-rounded float-right position-absolute">Join</button>
-                    </div>
-
-                    <!-- Card body -->
-                    <div id="{{ startups.start_up_name }}" class="collapse" role="tabpanel" aria-labelledby="headingTwo" data-parent="#accordionEx" >
-                        <div class="card-body">
-                            {{startups.start_up_description}}
-                        </div>
-                    </div>
-                </div>
-            <!-- Accordion card -->
-
-
-
-            <!-- Accordion card -->
-        </div>
-    </li>
-    {% endfor %}
-        <!--/.Accordion wrapper-->
-    <ul>
-
-    </ul>
-    {% else %}
-      <p>There are no Startup in the library.</p>
-    {% endif %}
+                      <!-- Horizontal material form -->
+                          <form>
+                              <!-- Grid row -->
+                              <div class="form-group row" style="width: 150%;">
+                                  <!-- Material input -->
+                                  <label for="inputtext3MD" class="col-sm-4 col-form-label">Name</label>
+                                  <div class="col-sm-8">
+                                      <div class="md-form mt-0">
+                                          Swati
+                                      </div>
+                                  </div>
+                              </div>
+                              <!-- Grid row -->
+                              <div class="form-group row" style="width: 150%;">
+                                  <!-- Material input -->
+                                  <label for="inputtext2MD" class="col-sm-4 col-form-label">Email</label>
+                                  <div class="col-sm-8">
+                                      <div class="md-form mt-0">
+                                           swati@gmail.ccom
+                                      </div>
+                                  </div>
+                              </div>
+                              <!-- Grid row -->
+                              <div class="form-group row" style="width: 150%;">
+                                  <!-- Material input -->
+                                  <label for="inputtext1  MD" class="col-sm-4 col-form-label">Mobile</label>
+                                  <div class="col-sm-8">
+                                      <div class="md-form mt-0">
+                                           8654754245
+                                      </div>
+                                  </div>
+                              </div>
+                              <!-- Grid row -->
+                              <div class="form-group row" style="width: 150%;">
+                                  <!-- Material input -->
+                                  <label for="inputtext1  MD" class="col-sm-4 col-form-label">address</label>
+                                  <div class="col-sm-8">
+                                      <div class="md-form mt-0">
+                                           Sec-18,Nerul,Navi Mumbai
+                                      </div>
+                                  </div>
+                              </div>
+                          </form>
+                          <!-- Horizontal material form -->
                     </div>
                 </div>
             </div>

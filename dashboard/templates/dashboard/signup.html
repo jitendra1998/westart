@@ -14,11 +14,11 @@
   <!-- Material Design Bootstrap -->
   <link href= {% static "css/mdb.min.css" %} rel="stylesheet">
   <!-- Your custom styles (optional) -->
-  <link href={% static "css/style.min.css" %} rel="stylesheet">
+  <link href= {% static "css/style.min.css" %} rel="stylesheet">
 <style>
 .full-page-intro{
       height: 700px;
-    } 
+    }
 }
 </style>
 </head>
@@ -27,19 +27,19 @@
 
   <!-- Navbar -->
 <!--   <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
-    <div class="container"> 
- 
+    <div class="container">
+
       <a class="navbar-brand" href="https://mdbootstrap.com/material-design-for-bootstrap/" target="_blank">
         <strong>MDB</strong>
       </a>
- 
+
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
         aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
- 
+
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
- 
+
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
             <a class="nav-link" href="#">Home
@@ -56,7 +56,7 @@
             <a class="nav-link" href="https://mdbootstrap.com/bootstrap-tutorial/" target="_blank">Free tutorials</a>
           </li>
         </ul>
- 
+
         </ul>
 
       </div>
@@ -103,7 +103,7 @@
 
           <!--Grid column-->
           <div class="col-md-3 col-xl-4 mb-4">
-            
+
           </div>
           <div class="col-md-6 col-xl-5 mb-4">
 
@@ -114,7 +114,8 @@
               <div class="card-body">
 
                 <!-- Form -->
-                <form name="">
+                <form name="" method="post" >
+                  {% csrf_token %}
                   <!-- Heading -->
                    <h3 class="dark-grey-text text-center">
                     <strong>Sign Up</strong>
@@ -123,29 +124,39 @@
 
                   <div class="md-form">
                     <i class="fa fa-user prefix grey-text"></i>
-                    <input type="text" id="form3" class="form-control">
-                    <label for="form3">Your email</label>
+                    <input type="text" id="username" name="username" class="form-control">
+                    <label for="form3">Your Username</label>
                   </div>
                   <div class="md-form">
                     <i class="fa fa-user prefix grey-text"></i>
-                    <input type="text" id="form4" class="form-control">
-                    <label for="form4">Your Name</label>
+                    <input type="text" id="email" name="email" class="form-control">
+                    <label for="form4">Your Email</label>
                   </div>
                   <div class="md-form">
                     <i class="fa fa-lock prefix grey-text"></i>
-                    <input type="password" id="form2" class="form-control">
-                    <label for="form2">Your Password</label> 
-                 
+                    <input type="password" id="password1" name="password1" class="form-control">
+                    <label for="form2">Your Password</label>
+
                   </div>
                   <div class="md-form">
                     <i class="fa fa-exclamation-triangle prefix grey-text"></i>
-                    <input type="password" id="materialFormCardPasswordEx" class="form-control">
-                    <label for="materialFormCardPasswordEx" >Confirm password</label>
+                    <input type="password" id="password2" name="password2" class="form-control">
+                    <label for="password2" >Confirm password</label>
                   </div>
- 
+                  <!--Checkbox butons-->
+                    <div class="btn-group" data-toggle="buttons">
+                        <label class="btn btn-default form-check-label">
+                            <input class="form-check-input" type="radio" id='custom' name="custom" autocomplete="off"> Customer
+                        </label>
 
+                        <label class="btn btn-default form-check-label">
+                            <input class="form-check-input" type="radio" id='sell' name="sell" autocomplete="off"> Seller
+                        </label>
+
+                    </div>
+                    <!--Checkbox butons-->
                   <div class="text-center">
-                    <button class="col-md-7 btn btn-indigo ">Sign Up</button> 
+                    <button class="col-md-7 btn btn-indigo ">Sign Up</button>
                     <p class="font-small dark-grey-text text-right d-flex justify-content-center mb-3 pt-2"> or Sign in with:</p>
 
                 <div class="row my-3 d-flex justify-content-center">
@@ -160,6 +171,10 @@
               <div class="modal-footer mx-5 pt-3 mb-1">
                   <p class="font-small grey-text d-flex justify-content-end">Already a member? <a href="#" class="blue-text ml-1">Login</a></p>
               </div>
+              {% if error != '' %}
+                  <label class='red-text' for="">{{ error }}</label>
+              {% endif %}
+
                   </div>
 
                 </form>

@@ -41,23 +41,29 @@
                         </a>
                     </li>
                     <li>
-                        <a class="nav-link" href="./user.html">
+                        <a class="nav-link" href="{% url 'userorder' %}">
                             <i class="nc-icon nc-circle-09"></i>
                             <p>User Profile</p>
-                        </a>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="../viewstartup">
-                            <i class="nc-icon nc-notes"></i>
-                            <p>View Startups</p>
                         </a>
                     </li>
                     <li>
                         <a class="nav-link" href="./typography.html">
                             <i class="nc-icon nc-paper-2"></i>
-                            <p>Create Startup</p>
+                            <p>View Startup</p>
                         </a>
-                    </li> 
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="../viewstartup">
+                            <i class="nc-icon nc-notes"></i>
+                            <p>Create Startups</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./icons.html">
+                            <i class="nc-icon nc-notes"></i>
+                            <p class="col-md-8" style="padding: 0px;">View Venture Capitalists</p>
+                        </a>
+                    </li>
                     <li>
                         <a class="nav-link" href="./notifications.html">
                             <i class="nc-icon nc-bell-55"></i>
@@ -128,49 +134,43 @@
             <div class="content">
                 <div class="container-fluid">
                     <div class="row">
-                            {% if startups_list %}
-    <ul style="width: 100%">
+                        <!-- Horizontal material form -->
+                            <form method="post">
+                              {% csrf_token %}
+                                <!-- Grid row -->
+                                <div class="form-group row" style="width: 150%;">
+                                    <!-- Material input -->
+                                    <label for="inputtext3MD" class="col-sm-4 col-form-label">Start Up Name</label>
+                                    <div class="col-sm-8">
+                                        <div class="md-form mt-0">
+                                            <input type="text" class="form-control" name="startname" id="inputtext3MD" placeholder="Name">
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Grid row -->
 
-      {% for startups in startups_list %}
-      <li>
-        <!--Accordion wrapper-->
-        <div class="accordion" id="accordionEx" role="tablist" aria-multiselectable="true">
+                                <!-- Grid row -->
+                                <!-- Grid row -->
+                                <div class="form-group row" style="width: 150%;">
+                                    <!-- Material input -->
+                                    <label for="inputtextarea3MD" class="col-sm-4 col-form-label">Start Up Description</label>
+                                    <div class="col-sm-8">
+                                        <div class="md-form mt-0">
+                                             <textarea class="form-control" name="startdescription" id="inputtextarea3MD" rows="5"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Grid row -->
 
-            <!-- Accordion card -->
-             <div class="card">
-
-                    <!-- Card header -->
-                    <div class="card-header" role="tab" id="headingTwo" >
-                        <a  class="collapsed" data-toggle="collapse" href="#{{ startups.start_up_name }}" aria-expanded="false" aria-controls="{{ startups.start_up_name }}">
-                            <h5 class=" col-md-8" style="margin: 0px; ">
-                                 {{ startups.start_up_name }} <i class="fa fa-angle-down rotate-icon"></i>
-                            </h5>
-                        </a>
-                        <button type="button" style="margin-bottom:10px;" class="btn btn-info btn-rounded float-right position-absolute">Join</button>
-                    </div>
-
-                    <!-- Card body -->
-                    <div id="{{ startups.start_up_name }}" class="collapse" role="tabpanel" aria-labelledby="headingTwo" data-parent="#accordionEx" >
-                        <div class="card-body">
-                            {{startups.start_up_description}}
-                        </div>
-                    </div>
-                </div>
-            <!-- Accordion card -->
-
-
-
-            <!-- Accordion card -->
-        </div>
-    </li>
-    {% endfor %}
-        <!--/.Accordion wrapper-->
-    <ul>
-
-    </ul>
-    {% else %}
-      <p>There are no Startup in the library.</p>
-    {% endif %}
+                                <!-- Grid row -->
+                                <div class="form-group row">
+                                    <div class="col-sm-10">
+                                        <button type="submit" class="btn btn-primary btn-md">Submit</button>
+                                    </div>
+                                </div>
+                                <!-- Grid row -->
+                            </form>
+                            <!-- Horizontal material form -->
                     </div>
                 </div>
             </div>
@@ -199,7 +199,7 @@
                             <script>
                                 document.write(new Date().getFullYear())
                             </script>
-                            <a href="http://www.creative-tim.com">Creative Tim</a>, made with love for a better web
+                            <!-- <a href="#">Creative Tim</a>, made with love for a better web -->
                         </p>
                     </nav>
                 </div>
@@ -214,7 +214,7 @@
         </a>
 
         <ul class="dropdown-menu">
-			<li class="header-title"> Sidebar Style</li>
+            <li class="header-title"> Sidebar Style</li>
             <li class="adjustments-line">
                 <a href="javascript:void(0)" class="switch-trigger">
                     <p>Background Image</p>
@@ -278,7 +278,7 @@
             <li class="header-title" id="sharrreTitle">Thank you for sharing!</li>
 
             <li class="button-container">
-				<button id="twitter" class="btn btn-social btn-outline btn-twitter btn-round sharrre"><i class="fa fa-twitter"></i> · 256</button>
+                <button id="twitter" class="btn btn-social btn-outline btn-twitter btn-round sharrre"><i class="fa fa-twitter"></i> · 256</button>
                 <button id="facebook" class="btn btn-social btn-outline btn-facebook btn-round sharrre"><i class="fa fa-facebook-square"></i> · 426</button>
             </li>
         </ul>

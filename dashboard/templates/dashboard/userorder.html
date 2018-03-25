@@ -37,31 +37,25 @@
                     <li>
                         <a class="nav-link" href="../dashboard">
                             <i class="nc-icon nc-chart-pie-35"></i>
-                            <p>Dashboard</p>
+                            <p>Dashboard active</p>
                         </a>
                     </li>
                     <li>
                         <a class="nav-link" href="./user.html">
-                            <i class="nc-icon nc-circle-09"></i>
-                            <p>User Profile</p>
+                            <i class="nc-icon nc-notes"></i>
+                            <p>Order</p>
                         </a>
                     </li>
-                    <li class="nav-item active">
+                    <li class="nav-item">
                         <a class="nav-link" href="../viewstartup">
-                            <i class="nc-icon nc-notes"></i>
-                            <p>View Startups</p>
+                            <i class="nc-icon nc-paper-2"></i>
+                            <p>Previous Order</p>
                         </a>
                     </li>
                     <li>
                         <a class="nav-link" href="./typography.html">
-                            <i class="nc-icon nc-paper-2"></i>
-                            <p>Create Startup</p>
-                        </a>
-                    </li> 
-                    <li>
-                        <a class="nav-link" href="./notifications.html">
-                            <i class="nc-icon nc-bell-55"></i>
-                            <p>Notifications</p>
+                            <i class="nc-icon nc-circle-09"></i>
+                            <p>User Profile</p>
                         </a>
                     </li>
                 </ul>
@@ -116,9 +110,9 @@
                                 </div>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#pablo">
-                                    <span class="no-icon">Log out</span>
-                                </a>
+                              <a class="nav-link" href="{% url 'logout' %}">
+                                  <span class="no-icon">Log out</span>
+                              </a>
                             </li>
                         </ul>
                     </div>
@@ -128,49 +122,29 @@
             <div class="content">
                 <div class="container-fluid">
                     <div class="row">
-                            {% if startups_list %}
-    <ul style="width: 100%">
+                        <!--Card-->
+                        {% if order_details %}
+                        {% for order in order_details %}
+                        <div class="card text-center " style="padding:  10px; width: 30%;"  >
 
-      {% for startups in startups_list %}
-      <li>
-        <!--Accordion wrapper-->
-        <div class="accordion" id="accordionEx" role="tablist" aria-multiselectable="true">
+                            <!--Card image-->
+                            <img class="img-fluid mx-auto d-block" src="https://smedia2.intoday.in/aajtak/images/stories/112016/sabji-pakwangali_520_051017034930.jpg" alt="Card image cap" style="width: 30%">
 
-            <!-- Accordion card -->
-             <div class="card">
+                            <!--Card content-->
+                            <div class="card-body" >
+                                <!--Title-->
+                                <h4 class="card-title">{{ order.order_item }}</h4>
+                                <!--Text-->
+                                <p class="card-text">Price : {{ order.order_price }}rs/-</p>
+                                <a href="#" class="btn btn-primary">Track Order</a>
+                            </div>
 
-                    <!-- Card header -->
-                    <div class="card-header" role="tab" id="headingTwo" >
-                        <a  class="collapsed" data-toggle="collapse" href="#{{ startups.start_up_name }}" aria-expanded="false" aria-controls="{{ startups.start_up_name }}">
-                            <h5 class=" col-md-8" style="margin: 0px; ">
-                                 {{ startups.start_up_name }} <i class="fa fa-angle-down rotate-icon"></i>
-                            </h5>
-                        </a>
-                        <button type="button" style="margin-bottom:10px;" class="btn btn-info btn-rounded float-right position-absolute">Join</button>
-                    </div>
-
-                    <!-- Card body -->
-                    <div id="{{ startups.start_up_name }}" class="collapse" role="tabpanel" aria-labelledby="headingTwo" data-parent="#accordionEx" >
-                        <div class="card-body">
-                            {{startups.start_up_description}}
                         </div>
-                    </div>
-                </div>
-            <!-- Accordion card -->
-
-
-
-            <!-- Accordion card -->
-        </div>
-    </li>
-    {% endfor %}
-        <!--/.Accordion wrapper-->
-    <ul>
-
-    </ul>
-    {% else %}
-      <p>There are no Startup in the library.</p>
-    {% endif %}
+                        {% endfor %}
+                        {% else %}
+                          <p>There are no Order in the library.</p>
+                        {% endif %}
+                        <!--/Card-->
                     </div>
                 </div>
             </div>
@@ -214,7 +188,7 @@
         </a>
 
         <ul class="dropdown-menu">
-			<li class="header-title"> Sidebar Style</li>
+            <li class="header-title"> Sidebar Style</li>
             <li class="adjustments-line">
                 <a href="javascript:void(0)" class="switch-trigger">
                     <p>Background Image</p>
@@ -278,7 +252,7 @@
             <li class="header-title" id="sharrreTitle">Thank you for sharing!</li>
 
             <li class="button-container">
-				<button id="twitter" class="btn btn-social btn-outline btn-twitter btn-round sharrre"><i class="fa fa-twitter"></i> · 256</button>
+                <button id="twitter" class="btn btn-social btn-outline btn-twitter btn-round sharrre"><i class="fa fa-twitter"></i> · 256</button>
                 <button id="facebook" class="btn btn-social btn-outline btn-facebook btn-round sharrre"><i class="fa fa-facebook-square"></i> · 426</button>
             </li>
         </ul>
